@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}Predict - Predictive Pulse{% endblock %}
+
+{% block content %}
+<h2>Enter Patient Details</h2>
+<form method="POST">
+    <div class="row">
+        <!-- Gender -->
+        <div class="col-md-6 mb-3">
+            <label>Gender:</label>
+            <select class="form-control" name="Gender">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+        </div>
+
+        <!-- Age -->
+        <div class="col-md-6 mb-3">
+            <label>Age:</label>
+            <input type="number" class="form-control" name="Age" required>
+        </div>
+
+        <!-- History -->
+        <div class="col-md-6 mb-3">
+            <label>History of Hypertension:</label>
+            <select class="form-control" name="History">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <!-- Patient -->
+        <div class="col-md-6 mb-3">
+            <label>Patient Status:</label>
+            <select class="form-control" name="Patient">
+                <option value="0">Outpatient</option>
+                <option value="1">Inpatient</option>
+            </select>
+        </div>
+
+        <!-- Take Medication -->
+        <div class="col-md-6 mb-3">
+            <label>Taking Medication:</label>
+            <select class="form-control" name="TakeMedication">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <!-- ✅ FIXED Severity -->
+        <div class="col-md-6 mb-3">
+            <label>Severity:</label>
+            <select class="form-control" name="Severity">
+                <option value="0">Mild</option>
+                <option value="1">Moderate</option>
+                <option value="2">Severe</option>
+            </select>
+        </div>
+
+        <!-- Breath Shortness -->
+        <div class="col-md-6 mb-3">
+            <label>Breath Shortness:</label>
+            <select class="form-control" name="BreathShortness">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <!-- Visual Changes -->
+        <div class="col-md-6 mb-3">
+            <label>Visual Changes:</label>
+            <select class="form-control" name="VisualChanges">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <!-- Nose Bleeding -->
+        <div class="col-md-6 mb-3">
+            <label>Nose Bleeding:</label>
+            <select class="form-control" name="NoseBleeding">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <!-- When Diagnosed -->
+        <div class="col-md-6 mb-3">
+            <label>When Diagnosed (Years Ago):</label>
+            <input type="number" class="form-control" name="Whendiagnoused" required>
+        </div>
+
+        <!-- Systolic -->
+        <div class="col-md-6 mb-3">
+            <label>Systolic BP:</label>
+            <input type="number" class="form-control" name="Systolic" required>
+        </div>
+
+        <!-- Diastolic -->
+        <div class="col-md-6 mb-3">
+            <label>Diastolic BP:</label>
+            <input type="number" class="form-control" name="Diastolic" required>
+        </div>
+
+        <!-- Controlled Diet -->
+        <div class="col-md-6 mb-3">
+            <label>Controlled Diet:</label>
+            <select class="form-control" name="ControlledDiet">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Predict</button>
+</form>
+
+{% if prediction %}
+<div class="alert alert-info mt-4">
+    {{ prediction }}
+</div>
+{% endif %}
+{% endblock %}

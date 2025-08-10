@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Home - Predictive Pulse{% endblock %}
+
+{% block content %}
+<div class="text-center my-5">
+    <h1>Blood Pressure Stage Predictor</h1>
+    <p class="lead">
+        Predict the stage of blood pressure based on patient health indicators using machine learning.
+    </p>
+    <a href="{{ url_for('predict') }}" class="btn btn-primary btn-lg mt-3">Get Started</a>
+</div>
+{% endblock %}
